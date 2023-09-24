@@ -19,6 +19,45 @@
     </style>
 </head>
 <body>
+<?php 
+echo "<h3>";
+echo date("西元Y年m月");
+echo "</h3>";
+$thisMonth=date("Y");
+$thisFirstDay=date("Y-m-1");
+$thisFirstDate=date('w',strtotime($thisFirstDay));
+$thisMonthDays=date("t");
+$thisLastDay=date("Y-m-$thisMonthDays");
+
+echo "<table>";
+echo "<tr>";
+echo "<td>日</td>";
+echo "<td>一</td>";
+echo "<td>二</td>";
+echo "<td>三</td>";
+echo "<td>四</td>";
+echo "<td>五</td>";
+echo "<td>六</td>";
+echo "</tr>";
+for($i=0;$i<6;$i++){
+    echo "<tr>";
+    for($j=0;$j<7;$j++){
+        echo "<td>";
+        $tmp=7*($i+1)-(6-$j)-$thisFirstDate;
+        if($tmp>0 && $tmp<=$thisMonthDays){
+            echo $tmp;
+        }
+        
+        echo "</td>";
+    }
+    echo "</tr>";
+}
+
+echo "</table>";
+
+
+
+?>
     <h3>西元2023年10月</h3>
 <table>
     <tr>
