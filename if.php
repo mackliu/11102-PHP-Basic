@@ -53,3 +53,6 @@ switch ($level) {
     default:
         echo "是否無心學業?";
 }
+
+
+?>
