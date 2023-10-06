@@ -27,3 +27,14 @@ echo "</pre>";
 
 echo $b['姓名'];
 echo $b['tel'];
+echo "<hr>";
+$c=[];
+$c['name']='劉勤永';
+$c['興趣']=['看書','打電動','追劇'];
+echo "<pre>";
+print_r($c);
+echo "</pre>";
+
+echo $c['name'];
+echo $c['興趣'][0];
+echo $c['興趣'][2];
