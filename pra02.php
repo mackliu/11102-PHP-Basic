@@ -89,6 +89,34 @@ for($j=0;$j<10;$j++){
 }
 echo "</table>";
 ?>
+
+<h1>九九乘法表-chatGPT寫的</h1>
+    <table>
+        <tr>
+            <th>x</th>
+<?php
+// 生成表頭的列，包含 1 到 9 的數字
+for ($i = 1; $i <= 9; $i++) {
+    echo "<th>$i</th>";
+}
+?>
+        </tr>
+<?php
+// 生成九九乘法表的主體
+for ($i = 1; $i <= 9; $i++) {
+    echo "<tr><th>$i</th>";
+    for ($j = 1; $j <= 9; $j++) {
+        if ($j <= $i) {
+            $result = $i * $j;
+            echo "<td>$i x $j = $result</td>";
+        } else {
+            echo "<td></td>"; // 空儲存格
+        }
+    }
+    echo "</tr>";
+    }
+?>
+    </table>
 <!-- 
 <table>
     <tr>
