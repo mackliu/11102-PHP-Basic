@@ -28,6 +28,7 @@ $thisFirstDay=date("Y-m-1");
 $thisFirstDate=date('w',strtotime($thisFirstDay));
 $thisMonthDays=date("t");
 $thisLastDay=date("Y-m-$thisMonthDays");
+$weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
 
 echo "<table>";
 echo "<tr>";
@@ -39,7 +40,7 @@ echo "<td>四</td>";
 echo "<td>五</td>";
 echo "<td>六</td>";
 echo "</tr>";
-for($i=0;$i<6;$i++){
+for($i=0;$i<$weeks;$i++){
     echo "<tr>";
     for($j=0;$j<7;$j++){
         echo "<td>";
