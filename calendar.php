@@ -30,7 +30,6 @@ $thisMonthDays=date("t");
 $thisLastDay=date("Y-m-$thisMonthDays");
 $weeks=ceil(($thisMonthDays+$thisFirstDate)/7);
 $firstCell=date("Y-m-d",strtotime("-$thisFirstDate days",strtotime($thisFirstDay)));
-echo $firstCell;
 echo "<table>";
 echo "<tr>";
 echo "<td>日</td>";
@@ -53,7 +52,7 @@ for($i=0;$i<$weeks;$i++){
             echo "<td>";
         }
         if(date("m",$thisCellDate)==date("m",strtotime($thisFirstDay))){
-            echo date("Y-m-d",$thisCellDate);
+            echo date("j",$thisCellDate);
         }
         echo "</td>";
     }
