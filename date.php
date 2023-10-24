@@ -20,3 +20,18 @@ $days=(strtotime($date2)-strtotime($date1))/(60*60*24);
 echo "<hr>";
 echo  $date1.'到'.$date2."有". $days."天";
 
+?>
+<h2>計算下次生日天數</h2>
+<?php
+$date="1974-10-07";
+$br=strtotime($date);
+$diff=strtotime(date("Y")."-".date("m-d",$br));
+$today=strtotime('now');
+if($diff>$today){
+    $days=($diff-$today)/(60*60*24);
+}else{
+    $diff=strtotime("+1 year",$diff);
+    $days=($diff-$today)/(60*60*24);
+}
+
+echo "距離下一次生日:".date("Y-m-d",$diff)."還有".floor($days)."天";
